@@ -3,9 +3,8 @@ import { getSortedPostsData, getPostData } from "@/lib/posts";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 
-export async function generateMetadata({ params }: { params: { postId: string } }) {
-    // Await `params` if necessary
-    const awaitedParams = await params;
+export async function generateMetadata({ params }: { params: Promise<{ postId: string }> }) {
+    const awaitedParams = await params; // Await the params promise
     const { postId } = awaitedParams;
 
     const posts = getSortedPostsData();
@@ -22,9 +21,8 @@ export async function generateMetadata({ params }: { params: { postId: string } 
     };
 }
 
-export default async function Post({ params }: { params: { postId: string } }) {
-    // Await `params` if necessary
-    const awaitedParams = await params;
+export default async function Post({ params }: { params: Promise<{ postId: string }> }) {
+    const awaitedParams = await params; // Await the params promise
     const { postId } = awaitedParams;
 
     const posts = getSortedPostsData();
