@@ -4,8 +4,8 @@ import Navbar from "./components/Navbar";
 import MyProfilePic from "./components/MyProfilePic";
 
 export const metadata: Metadata = {
-  title: "codeMadeEasy◩",
-  description: "created by Hussein Popoola",
+  title: "expensiveCodes◩",
+  description: "Created by Hussein Popoola",
 };
 
 export default function RootLayout({
@@ -15,9 +15,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className="dark:bg-slate-800"
-      >
+      <head>
+        <link rel="icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+        <link rel="manifest" href="/site.webmanifest" />
+        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
+        <meta name="msapplication-TileColor" content="#2d89ef" />
+        <meta name="theme-color" content="#ffffff" />
+      </head>
+      <body className="dark:bg-slate-800">
         <Navbar />
         <MyProfilePic />
         {children}
